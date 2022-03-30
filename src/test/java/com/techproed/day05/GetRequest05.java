@@ -25,7 +25,7 @@ public class GetRequest05 {
                 .assertThat()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("data.profile_image", hasSize(24),
+                .body("data.profile_image", hasSize(2),
                         "data.employee_name",hasItem("Herrod Chandler"),
                        "data.employee_age",hasItems(21,61,59));
 
