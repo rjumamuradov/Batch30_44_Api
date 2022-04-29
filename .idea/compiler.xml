@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Batch30_44_API" />
+        <module name="Batch 30_44_API" />
       </profile>
     </annotationProcessing>
   </component>
