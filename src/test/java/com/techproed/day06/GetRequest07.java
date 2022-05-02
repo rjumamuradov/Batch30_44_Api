@@ -1,6 +1,8 @@
 package com.techproed.day06;
 
 import com.techproed.testBase.HerokuAppTestbase;
+import io.restassured.*;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,7 +24,15 @@ public class GetRequest07 extends HerokuAppTestbase {
             .when()
             .get("/{par1}/{par2}");
 
+        JsonPath jsonPath=response.jsonPath();
+
         Assert.assertEquals(200,response.getStatusCode());
+        Assert.assertEquals("Susan",jsonPath.getString("firstname"));
+        System.out.println("jsonPath.getString(\"firstname\") = " + jsonPath.getString("firstname"));
+
+
+        Assert.assertEquals("Susan",jsonPath.get("firstname"));
+        System.out.println("jsonPath.get(\"firstname\") = " + jsonPath.get("firstname"));
     }
 
 }

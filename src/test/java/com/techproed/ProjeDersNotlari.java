@@ -99,4 +99,143 @@ Create Test Execution -> All Tets -> Create TIKLA
 TESTLERİ TEKER TEKER YAP. PASSED’A TIKLA
 GERİ DÖNMEK İÇİN EN ÜSTEKİ Return to test Execution
      */
+
+    /*
+
+Murat TANÇ  11:02 PM
+AWS HESAP OLUŞTURMA
+https://portal.aws.amazon.com/billing/signup#/start
+1) Root user email address: email adresinizi girin
+2) AWS account name: Hesap isminizi girin
+3) Verify email address’e TIKLA
+4) Confirm you are you: mail adresinize gelen kodu
+“Verification code” kısmına yaz ve Verify’a TIKLA
+5) Create your password: Password Olusturm
+Root user password:
+Confirm root user password:
+“Continue (step 1 of 5)“” TIKLA
+6) Contact Information
+	“Personal - for your own projects” SECA
+	Full Name
+	Phone Number
+	Country or Region
+	Address
+	City
+	State, Province, or Region
+	Postal Code
+	I have read and agree to the terms of the AWS Customer Agreement. SEÇ
+“Continue (step 2 of 5)“” TIKLA
+7) Billing Information: ÖDEME KISMI
+NOT: Arkadaşlar AWS kredi kartınızdan ülkeden ülkeye değişmekle birlikte 0 dolar doğrulama ücreti kesiyor.
+Bazı ülkelerde 1 dolar veya 1 Euro kesiyor. Bilginize.
+Credit or Debit card number:
+Expiration date:
+Cardholder’s name:
+“Billing adress -> Use My contact adress” SEÇ
+“Verify and Continue (step 3 of 5)“” TIKLA
+8) Confirm your identity
+	Country or region code
+	Mobile phone number
+	Security check
+Send SMS (step 4 of 5) TIKLA
+9) Confirm your identity
+
+	Verify code: Telefona gelen kodu yaz
+Continue (step 4 of 5) TIKLA
+10) Select a support plan
+“Basic support - Free” SEÇ
+“Complete sign up” TIKLA
+ÜYELİK TAMAMLANDI.
+“Go to the AWS Management Console” TIKLA
+11) Sign in
+Root user email address:
+NEXT’e TIKLA
+12) Security check
+Submit’e TIKLA
+13) Password: Şifreni Yaz
+	“Sign in” TIKLA
+AWS Management Console giriş yapmış oldunuz.
+SANAL MAKİNA KURULUMU
+EC2 TIKLA
+Açılan Sayfada Launch Instances’a TIKLA (Sağ Üst Köse)
+1.Choose AMI(Amazon Machine Image)
+Ubuntu Server 20.04, 64 Bit, SELECT’e TIKLA
+2. Choose Instance Type
+Açılan Sayfada t2.micro Free tier eligible olanı SEÇ NEXT
+3.Configure Instance Details
+Açılan Sayfada hiçbir seçim yapmadan NEXT(Add Storage) TIKLA
+4.Add Storage -> Size 16GB yap ve NEXT
+5.Add Tags -> Key: Name, Value: JenkinsNew NEXT
+6.Congigure Security Group
+SSH -> Source ->My Ip SEÇ
+Add Rule -> Port Range 8080, Source ->My Ip SEÇ
+Add Rule ->Type -> HTTP
+Add Rule ->Type -> HTTPS
+Review And Lunch’a TIKLA
+7.Review -> Launch’a TIKLA
+create an existing key pair
+rsa seç
+keye ism ver
+oluştur de keyi bilgisayara yükle
+lazım olacak önemli
+Your instances are now launching
+The following instance launches have been initiated: i-0745d1acffa63c6e1
+i-0745d1acffa63c6e1 TIKLA
+CONNECT’e TIKLA
+EC2 Instance Connect veya SSH Client ile bağlanabiliriz
+CMD DE İNDİRDİĞİNİZ KEY DOSYASININI KONUMUNU AÇIN
+AWS Console da - Intances - Intances ID TIKLA
+Connect - SSH Cliet TIKLA
+Connect to your instance using its Public DNS:
+Example daki kodu kopyala ve CMD Ekranına yapıştır ENTER
+ssh -i “Jenkins.pem” ubuntu@ec2-18-207-180-135.compute-1.amazonaws.com
+1)Update and get ready all tools and packages on Ubantu Server
+sudo apt-get update
+sudo apt-get upgrade
+2)INSTALL LATEST CHROME Binary on UBANTU SERVER
+sudo apt-get install -y libappindicator1 fonts-liberation
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+sudo apt-get install -f
+sudo dpkg -i google-chrome*.deb
+INSTALL LATEST CHROME DRİVER ON UBANTU SERVER
+sudo apt install unzip
+wget https://chromedriver.storage.googleapis.com/101.0.4951.41/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin/chromedriver
+MAIN TOOL INSTALLATIONS
+sudo apt-get install default-jdk
+sudo apt install maven
+sudo apt install git
+JENKINS INSTALATION
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+Browser’da http://3.139.59.40:8080/	Jenkinse girmiş olduk.
+JENKINS KURULUM İÇİN PASSWORD ALMA
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Kodunu kullanarak kurulum için gereken password aldık
+8de50f2644c94765a8fa77a618b9b19c
+JENKINS KURULUMU TAMAMLANDI
+Manage Jenkins -> Global Tool Configuration
+JDK -> Add JDK
+Name -> JAVA_HOME
+JAVA_HOME -> /usr/lib/jvm/java-11-openjdk-amd64
+Git -> Git Path -> /usr/lib/git-core/git
+Maven -> Name: MAVEN_HOME
+		MAVEN_HOME: /usr/share/maven
+APPLY AND SAVE
+New Item (Yeni Öğe)
+Enter an item name : *******
+Freestyle project
+OK
+Git -> Repository URL
+https://github.com/HalilIbrahimHasan/jenkins_cloud.git
+Build -> Invoke top-level Maveb target
+Maven Version -> MAVEN_HOME
+Goals -> clean install
+clean test -Dcucumberoptions=“--tags @smoketest”
+clean test -P TestRunne
+     */
 }
