@@ -1,14 +1,13 @@
 package com.techproed.day06;
 
-import com.techproed.testBase.HerokuAppTestbase;
-import io.restassured.*;
+import com.techproed.testBase.HerokuAppTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
 
-public class GetRequest07 extends HerokuAppTestbase {
+public class GetRequest07 extends HerokuAppTestBase {
     Response response;
 
 //https://restful-booker.herokuapp.com/booking/5
