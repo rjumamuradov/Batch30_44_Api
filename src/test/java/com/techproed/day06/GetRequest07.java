@@ -15,7 +15,7 @@ public class GetRequest07 extends HerokuAppTestbase {
 
 
     @Test
-    public void GetRequest07() {
+    public void getRequest07() {
 
     spec02.pathParams("par1","booking","par2","5");
     response=given()
