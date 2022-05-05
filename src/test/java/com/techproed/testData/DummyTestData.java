@@ -23,10 +23,10 @@ public class DummyTestData {
 */
 
     public HashMap<String, Object> setUpTestData() {
-        List<Integer> yaslar = new ArrayList<Integer>();
-        yaslar.add(21);
-        yaslar.add(67);
-        yaslar.add(44);
+        List<Integer> arananYaslar = new ArrayList<Integer>();
+        arananYaslar.add(21);
+        arananYaslar.add(19);
+        arananYaslar.add(40);
 
 
         HashMap<String, Object> onbirinciID = new HashMap<String, Object>();
@@ -43,7 +43,7 @@ public class DummyTestData {
         expectedData.put("besincicalisan","Airi Satou");
         expectedData.put("calisansayisi",24);
         expectedData.put("sondanikincicalisanmaasi",106450);
-        expectedData.put("arananyaslar",yaslar);
+        expectedData.put("arananYaslar", arananYaslar);
         expectedData.put("onbirincicalisan",onbirinciID);
 
         return expectedData;

@@ -46,7 +46,7 @@ public class GetRequest12 extends HerokuAppTestBase {
 
         HashMap<String, Object> actualDataMap = response.as(HashMap.class);
         System.out.println("actualDataMap = " + actualDataMap);
-        Assert.assertEquals(expectedDataMap.get("firstname"), actualDataMap.get("firstname"));
+        Assert. assertEquals(expectedDataMap.get("firstname"), actualDataMap.get("firstname"));
         Assert.assertEquals(expectedDataMap.get("lastname"), actualDataMap.get("lastname"));
         Assert.assertEquals(expectedDataMap.get("totalprice"), actualDataMap.get("totalprice"));
         Assert.assertEquals(expectedDataMap.get("depositpaid"), actualDataMap.get("depositpaid"));
