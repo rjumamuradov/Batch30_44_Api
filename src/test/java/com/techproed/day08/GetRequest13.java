@@ -80,10 +80,29 @@ public class GetRequest13 extends DummyTestBase {
                 "profile_image": "" }
     } gibi olduğunu test edin.
     */
-        Assert.assertEquals( ((Map)expectedMap.get("onbirincicalisan")).get("employee_name")
-        ,((Map)((List<?>) actualMap.get("data")).get(10)).get("employee_name")
-                );
 
+        //            "employee_name": "Jena Gaines",
+        Assert.assertEquals(((Map) expectedMap.get("onbirincicalisan")).get("employee_name")
+                , ((Map) ((List<?>) actualMap.get("data")).get(10)).get("employee_name")
+        );
+
+        //                "employee_salary": "90560",
+        Assert.assertEquals(
+                ((Map) expectedMap.get("onbirinciID")).get("employee_salary")
+                , ((Map) ((List<?>) actualMap.get("data")).get(10)).get("employee_salary")
+        );
+
+        //                "employee_age": "30",
+        Assert.assertEquals(
+                ((Map<?, ?>) expectedMap.get("onbirinciID")).get("employee_age")
+                , ((Map) ((List<?>) actualMap.get("data")).get(10)).get("employee_age")
+        );
+
+        //                "profile_image": "" }
+        Assert.assertEquals(
+                ((Map) expectedMap.get("onbirinciID")).get("profile_image")
+                , ((Map) ((List<?>) actualMap.get("data")).get(10)).get("profile_image")
+        );
 
     }
 

@@ -24,9 +24,10 @@ public class DummyTestData {
 
     public HashMap<String, Object> setUpTestData() {
         List<Integer> arananYaslar = new ArrayList<Integer>();
+        arananYaslar.add(40);
         arananYaslar.add(21);
         arananYaslar.add(19);
-        arananYaslar.add(40);
+
 
 
         HashMap<String, Object> onbirinciID = new HashMap<String, Object>();
