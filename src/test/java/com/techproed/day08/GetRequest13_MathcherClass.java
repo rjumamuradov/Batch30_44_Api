@@ -34,7 +34,7 @@ public class GetRequest13_MathcherClass extends DummyTestBase {
     @Test
     public void test() {
         DummyTestData dummyTestData = new DummyTestData();
-        HashMap<String, Object> expectedMap = new HashMap<String, Object>();
+        HashMap<String, Object> expectedMap = dummyTestData.setUpTestData();
         spec03.pathParam("par1", "employees");
         Response response = given()
                 .accept("application/json")

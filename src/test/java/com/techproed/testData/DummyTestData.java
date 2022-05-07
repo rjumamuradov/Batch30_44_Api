@@ -29,26 +29,44 @@ public class DummyTestData {
         arananYaslar.add(19);
 
 
-
         HashMap<String, Object> onbirinciID = new HashMap<String, Object>();
         onbirinciID.put("id", 1);
-        onbirinciID.put("employee_name","Jena Gaines");
-        onbirinciID.put("employee_salary",90560);
-        onbirinciID.put("employee_age",30);
-        onbirinciID.put("profile_image","");
+        onbirinciID.put("employee_name", "Jena Gaines");
+        onbirinciID.put("employee_salary", 90560);
+        onbirinciID.put("employee_age", 30);
+        onbirinciID.put("profile_image", "");
 
-        HashMap<String, Object> expectedDataMap=new HashMap<String, Object>();
+        HashMap<String, Object> expectedDataMap = new HashMap<String, Object>();
 
-        HashMap<String,Object> expectedData=new HashMap<String, Object>();
-        expectedData.put("statusCode",200);
-        expectedData.put("besincicalisan","Airi Satou");
-        expectedData.put("calisansayisi",24);
-        expectedData.put("sondanikincicalisanmaasi",106450);
+        HashMap<String, Object> expectedData = new HashMap<String, Object>();
+        expectedData.put("statusCode", 200);
+        expectedData.put("besincicalisan", "Airi Satou");
+        expectedData.put("calisansayisi", 24);
+        expectedData.put("sondanikincicalisanmaasi", 106450);
         expectedData.put("arananYaslar", arananYaslar);
-        expectedData.put("onbirincicalisan",onbirinciID);
+        expectedData.put("onbirincicalisan", onbirinciID);
 
         return expectedData;
 
 
     }
+
+    public HashMap<String, Integer> setUpTestData02() {
+ /*
+ http://dummy.restapiexample.com/api/v1/employees url ine bir istek gönderildiğinde
+Status kodun 200 olduğunu,
+En yüksek maaşın 725000 olduğunu,
+En küçük yaşın 19 olduğunu,
+İkinci en yüksek maaşın 675000
+olduğunu test edin.
+  */
+        HashMap<String, Integer> expectedData = new HashMap<String, Integer>();
+        expectedData.put("statusCode",200);
+        expectedData.put("enYuksekMaas",725000);
+        expectedData.put("enKucukYas",19);
+        expectedData.put("ikinciYuksekMaas",675000);
+        return expectedData;
+    }
+
+
 }
