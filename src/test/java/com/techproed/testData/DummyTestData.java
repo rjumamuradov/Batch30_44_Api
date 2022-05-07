@@ -61,12 +61,41 @@ En küçük yaşın 19 olduğunu,
 olduğunu test edin.
   */
         HashMap<String, Integer> expectedData = new HashMap<String, Integer>();
-        expectedData.put("statusCode",200);
-        expectedData.put("enYuksekMaas",725000);
-        expectedData.put("enKucukYas",19);
-        expectedData.put("ikinciYuksekMaas",675000);
+        expectedData.put("statusCode", 200);
+        expectedData.put("enYuksekMaas", 725000);
+        expectedData.put("enKucukYas", 19);
+        expectedData.put("ikinciYuksekMaas", 675000);
         return expectedData;
     }
 
+    public HashMap<String, String> setUpRequestBody() {
+        // "name":"Ahmet Aksoy",
+        // "salary":"1000",
+        // "age":"18",
+
+        HashMap<String, String> requestbody = new HashMap<String, String>();
+        requestbody.put("name", "batch44+");
+        requestbody.put("salary", "50000");
+        requestbody.put("age", "30");
+
+
+        return requestbody;
+    }
+
+    public HashMap<String, Object> setUpExpectedData() {
+        HashMap<String, Object> data = new HashMap<>();
+      // data.put("name", "batch44+");
+      // data.put("salary", "50000");
+      // data.put("age", "30");
+
+
+        HashMap<String, Object> expectedData = new HashMap<String, Object>();
+        expectedData.put("statusCode", 200);
+        expectedData.put("status", "success");
+       // expectedData.put("data", data);
+        expectedData.put("message", "Successfully! Record has been added.");
+
+        return expectedData;
+    }
 
 }
