@@ -1,5 +1,7 @@
 package com.techproed.testData;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,5 +17,19 @@ public class JsonPlaceHolderTestData {
         //System.out.println("expectedData = " + expectedData);
         return expectedData;
 
+    }
+    public JSONObject jasonObjectSetUpPostData(){
+        //"userId": 55,
+        //     "title": "Tidy your room",
+        //     "completed": false,
+
+        JSONObject expectedRequest =new JSONObject();
+
+        expectedRequest.put("statusCode",201);
+        expectedRequest.put("userId",55);
+        expectedRequest.put("title","Tidy your room");
+        expectedRequest.put("completed",false);
+
+        return expectedRequest;
     }
 }
