@@ -57,5 +57,7 @@ public class PostRequest01 extends JsonPlaceHolderTestBase {
         Assert.assertEquals(requestExpected.getTitle(),actualData.getTitle());
         Assert.assertEquals(requestExpected.isCompleted(),actualData.isCompleted());
 
+        // API test ended
+
     }
 }
